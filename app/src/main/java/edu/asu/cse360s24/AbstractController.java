@@ -1,4 +1,4 @@
-package epicmedical;
+package edu.asu.cse360s24;
 
 public abstract class AbstractController {
 	protected Main app;

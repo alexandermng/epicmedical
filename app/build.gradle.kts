@@ -37,7 +37,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "edu.asu.cse360s24.Main"
 }
 
 javafx {

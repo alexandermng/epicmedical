@@ -1,4 +1,4 @@
-package epicmedical;
+package edu.asu.cse360s24;
 
 import java.io.IOException;
 
@@ -14,15 +14,15 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.primary = stage;
-//		VBox root = new VBox();
-		
+		// VBox root = new VBox();
+
 		stage.setTitle("EPIC MEDICAL");
 		loadScene("Login.fxml");
 		stage.show();
 	}
-	
+
 	public void loadScene(String fxml) {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/"+fxml));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
 		Parent root;
 		try {
 			root = loader.load();
