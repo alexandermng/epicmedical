@@ -37,6 +37,13 @@ git clone https://github.com/alexandermng/epicmedical.git
 
 ### Eclipse
 
-Click `File > Import...`, and import the project as `Gradle > Existing Gradle Project`. After going through the wizard, it should be added under "app".
+Click `File > Import...`, and import the project as `Gradle > Existing Gradle Project`. After going through the wizard, it should be added under "app". If this option was not present, you need to ensure the Eclipse [BuildShip](https://marketplace.eclipse.org/content/buildship-gradle-integration) plugin is installed from the marketplace.
 
 To run it, under the `Gradle Tasks` pane, right-click under `epicmedical > application > run` and select `Open Gradle Run Configuration`. Save this new configuration, and after running it once you should be able to use the normal Run button. If not, right click the Run button and select the Gradle task as the run config.
+
+## Running
+
+If you're on the command-line, you can always do (Linux/Mac)
+```
+./gradlew run
+```
