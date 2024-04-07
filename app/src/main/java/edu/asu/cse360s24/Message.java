@@ -1,6 +1,8 @@
 package edu.asu.cse360s24;
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable {
 
 	private String to; // hmm.. these should be objects. TODO rewrite
 	private String from;
