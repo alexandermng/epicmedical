@@ -10,15 +10,21 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	private Stage primary;
+	Database db;
 
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.primary = stage;
-		// VBox root = new VBox();
+		this.db = new Database();
 
 		stage.setTitle("EPIC MEDICAL");
 		loadScene("Login.fxml");
 		stage.show();
+	}
+
+	@Override
+	public void stop() {
+		db.save(); // write out changes!
 	}
 
 	public void loadScene(String fxml) {
