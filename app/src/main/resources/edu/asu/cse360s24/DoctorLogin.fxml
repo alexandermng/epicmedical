@@ -25,7 +25,7 @@
         </VBox.margin>
     </PasswordField>
     
-    <Button text="Login" onAction="#submitLogin" style="-fx-font-size: 16;" />
+    <Button text="Login" onAction="#doctorPortal" style="-fx-font-size: 16;" />
 </VBox>
 </center>
 <bottom>

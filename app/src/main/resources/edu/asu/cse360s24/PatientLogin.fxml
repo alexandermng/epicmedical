@@ -11,7 +11,7 @@
         <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
     </padding>
     
-    <Label text="Nurse Login" style="-fx-font-size: 24;">
+    <Label text="Patient Login" style="-fx-font-size: 24;">
     	<VBox.margin>
             <Insets bottom="30.0"/>
         </VBox.margin>
@@ -25,7 +25,7 @@
         </VBox.margin>
     </PasswordField>
     
-    <Button text="Login" onAction="#nursePortal" style="-fx-font-size: 16;" />
+    <Button text="Login" onAction="#patientPortal" style="-fx-font-size: 16;" />
 </VBox>
 </center>
 <bottom>

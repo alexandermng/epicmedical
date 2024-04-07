@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.LoginViewController" style="-fx-background-color: lavender; -fx-padding: 10 10 10 10;">
+
+<top>
+<VBox alignment="CENTER">
+	<Label text="Patient Signup" style="-fx-font-size: 24;"/>
+</VBox>
+</top>
+
+<center>
+<GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+	<TextField promptText="First Name"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField promptText="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<DatePicker GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+</GridPane>
+</center>
+
+<bottom>
+<VBox alignment="CENTER">
+	<Button text="Continue" onAction="#nextSignup" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
+</VBox>
+</bottom>
+
+</BorderPane>
