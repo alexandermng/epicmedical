@@ -32,7 +32,7 @@ public class Main extends Application {
 		}
 		AbstractController cont = loader.getController();
 		cont.setApp(this);
-		primary.setScene(new Scene(root, 540, 360));
+		primary.setScene(new Scene(root, 540, 400));
 
 	}
 
