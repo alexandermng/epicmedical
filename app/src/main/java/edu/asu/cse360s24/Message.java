@@ -2,9 +2,9 @@ package edu.asu.cse360s24;
 
 public class Message {
 
-	private String to = "";
-	private String from = "";
-	private String message = "";
+	private String to; // hmm.. these should be objects. TODO rewrite
+	private String from;
+	private String message;
 
 	Message(String to, String from, String message) {
 		this.to = to;
@@ -12,27 +12,15 @@ public class Message {
 		this.message = message;
 	}
 
-	private String getTo() {
+	public String getTo() {
 		return to;
 	}
 
-	private void setTo(String to) {
-		this.to = to;
-	}
-
-	private String getFrom() {
+	public String getFrom() {
 		return from;
 	}
 
-	private void setFrom(String from) {
-		this.from = from;
-	}
-
-	private String getMessage() {
+	public String getMessage() {
 		return message;
-	}
-
-	private void setMessage(String message) {
-		this.message = message;
 	}
 }
