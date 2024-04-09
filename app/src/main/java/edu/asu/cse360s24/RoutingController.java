@@ -13,6 +13,8 @@ public abstract class RoutingController {
 	public final void setApp(Main app) {
 		this.app = app;
 	}
+	
+	public abstract void updatePage();
 
 	/***** ROUTES *****/
 	// NOTE: Keep this updated with accessible pages, as new Views (.fxml) are

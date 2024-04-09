@@ -49,8 +49,12 @@ public class PatientController extends RoutingController {
 
 	@FXML
 	protected void initialize() {
+	
+	}
+	
+	public void updatePage() {
 		if (patientName != null)
-			patientName.setText("Patient Name from DB");
+			patientName.setText(app.currentPatient.firstName);
 	}
 
 	/**

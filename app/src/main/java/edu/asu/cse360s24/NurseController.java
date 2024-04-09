@@ -22,6 +22,10 @@ public class NurseController extends RoutingController {
 		if (nurseName != null)
 			nurseName.setText("NurseName from DB");
 	}
+	
+	public void updatePage() {
+		
+	}
 
 	/**
 	 * Append a message to file history

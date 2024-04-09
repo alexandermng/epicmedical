@@ -11,6 +11,10 @@ public class LoginController extends RoutingController {
 
 	@FXML
 	PasswordField passwordTxt;
+	
+	public void updatePage() {
+		
+	}
 
 	@FXML
 	protected void patientLogin(ActionEvent evt) {

@@ -21,6 +21,10 @@ public class DoctorController extends RoutingController {
 		if (docName != null)
 			docName.setText("DoctorName from DB");
 	}
+	
+	public void updatePage() {
+		
+	}
 
 	/**
 	 * Append a message to file history
