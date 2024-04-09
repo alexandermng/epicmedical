@@ -4,14 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class LoginViewController extends AbstractController {
+public class LoginController extends AbstractController {
 
 	@FXML
 	TextField usernameTxt;
 
 	@FXML
 	PasswordField passwordTxt;
-	
+
 	@FXML
 	TextField messageText;
 
@@ -23,85 +23,89 @@ public class LoginViewController extends AbstractController {
 		// TODO
 	}
 
+	/***** ROUTING *****/
+
 	@FXML
-	protected void doctorLogin(ActionEvent evt) {
+	protected void goDoctorLogin(ActionEvent evt) {
 		app.loadScene("DoctorLogin.fxml");
 	}
-	
+
 	@FXML
-	protected void doctorPortal(ActionEvent evt) {
+	protected void goDoctorPortal(ActionEvent evt) {
 		app.loadScene("DoctorPortal.fxml");
 	}
 
 	@FXML
-	protected void nurseLogin(ActionEvent evt) {
+	protected void goNurseLogin(ActionEvent evt) {
 		app.loadScene("NurseLogin.fxml");
 	}
-	
+
 	@FXML
-	protected void nursePortal(ActionEvent evt) {
+	protected void goNursePortal(ActionEvent evt) {
 		app.loadScene("NursePortal.fxml");
 	}
 
 	@FXML
-	protected void patientLogin(ActionEvent evt) {
-		//System.out.println("Switching to Patient Login!");
+	protected void goPatientLogin(ActionEvent evt) {
+		// System.out.println("Switching to Patient Login!");
 		app.loadScene("PatientLogin.fxml");
 	}
 
 	@FXML
-	protected void homeLogin(ActionEvent evt) {
-		app.loadScene("Login.fxml");
-	}
-	
-	@FXML
-	protected void patientPortal(ActionEvent evt) {
+	protected void goPatientPortal(ActionEvent evt) {
 		app.loadScene("PatientPortal.fxml");
 	}
-	
+
+	@FXML
+	protected void goHomeLogin(ActionEvent evt) {
+		app.loadScene("Login.fxml");
+	}
+
+	// DELETE
+
 	@FXML
 	protected void saveInfo(ActionEvent evt) {
 		System.out.println("Saving Info");
 	}
-	
+
 	@FXML
-	protected void patientMessages(ActionEvent evt) {
+	protected void goPatientMessages(ActionEvent evt) {
 		app.loadScene("PatientMessaging.fxml");
 	}
-	
+
 	@FXML
 	protected void sendMessage(ActionEvent evt) {
 		System.out.println("Sending message:" + messageText.getText());
 	}
-	
+
 	@FXML
-	protected void signup(ActionEvent evt) {
+	protected void goPatientSignup(ActionEvent evt) {
 		app.loadScene("PatientSignup1.fxml");
 	}
-	
+
 	@FXML
-	protected void nextSignup(ActionEvent evt) {
+	protected void goPatientSignup2(ActionEvent evt) {
 		app.loadScene("PatientSignup2.fxml");
 	}
-	
+
 	@FXML
-	protected void newVisit(ActionEvent evt) {
+	protected void goNewVisit(ActionEvent evt) {
 		app.loadScene("NewVisit.fxml");
 	}
-	
+
 	@FXML
-	protected void nurseMessages(ActionEvent evt) {
+	protected void goNurseMessages(ActionEvent evt) {
 		app.loadScene("NurseMessaging.fxml");
 	}
-	
+
 	@FXML
-	protected void contVisit(ActionEvent evt) {
+	protected void goContinueVisit(ActionEvent evt) {
 		app.loadScene("ContinueVisit.fxml");
 	}
-	
+
 	@FXML
-	protected void doctorMessages(ActionEvent evt) {
+	protected void goDoctorMessages(ActionEvent evt) {
 		app.loadScene("DoctorMessaging.fxml");
 	}
-	
+
 }

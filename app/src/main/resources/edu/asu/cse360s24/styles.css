@@ -2,4 +2,10 @@
 	-fx-padding: 20;
 	-fx-alignment: center;
 	-fx-background-color: lavender;
+	-fx-font-size: 12;
+}
+
+.title {
+	-fx-font-size: 24;
+	-fx-min-width: 200;
 }

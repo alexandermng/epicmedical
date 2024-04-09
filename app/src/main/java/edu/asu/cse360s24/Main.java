@@ -28,6 +28,7 @@ public class Main extends Application {
 	}
 
 	public void loadScene(String fxml) {
+		System.out.println("Switching to " + fxml);
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
 		Parent root;
 		try {
@@ -39,7 +40,6 @@ public class Main extends Application {
 		AbstractController cont = loader.getController();
 		cont.setApp(this);
 		primary.setScene(new Scene(root, 540, 400));
-
 	}
 
 	public static void main(String[] args) {
