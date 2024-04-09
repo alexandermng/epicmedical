@@ -41,7 +41,7 @@ public class Main extends Application {
 		}
 		RoutingController cont = loader.getController();
 		cont.setApp(this);
-		primary.setScene(new Scene(root, 540, 400));
+		primary.setScene(new Scene(root, 800, 600));
 	}
 
 	public boolean checkPatientLogin(String username, String password) {
