@@ -12,7 +12,7 @@
 <top>
 <HBox alignment="CENTER" spacing="10.0">
     <!-- TODO: wire up -->
-	<Label text="[patient name]" style="-fx-font-size: 24; -fx-min-width: 200;">
+	<Label fx:id="patientName" text="[patient name]" style="-fx-font-size: 24; -fx-min-width: 200;">
     	<HBox.margin>
             <Insets right="200.0"/>
         </HBox.margin>

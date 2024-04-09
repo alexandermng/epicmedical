@@ -15,18 +15,18 @@
 <center>
 <GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
 	<!-- TODO: wire up -->
-	<TextField promptText="First Name"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField promptText="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<DatePicker GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+	<TextField fx:id="FirstName" promptText="First Name"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField fx:id="LastName" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField fx:id="Username" promptText="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<PasswordField fx:id="Password" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField fx:id="PhoneNum" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<DatePicker fx:id="Birthdate" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 </GridPane>
 </center>
 
 <bottom>
 <VBox alignment="CENTER">
-	<Button text="Continue" onAction="#goPatientSignup2" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
+	<Button text="Continue" onAction="#patientSignup2" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
 </VBox>
 </bottom>
 

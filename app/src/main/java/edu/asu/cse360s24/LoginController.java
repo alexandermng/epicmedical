@@ -18,7 +18,9 @@ public class LoginController extends RoutingController {
 		System.out.println("Logging in Patient!");
 		System.out.println("\tUsername: " + usernameTxt.getText());
 		System.out.println("\tPassword: " + passwordTxt.getText());
-		goPatientPortal(evt);
+		if (app.checkPatientLogin(usernameTxt.getText(), passwordTxt.getText())) {
+			goPatientPortal(evt);
+		}
 	}
 
 	@FXML
@@ -27,7 +29,9 @@ public class LoginController extends RoutingController {
 		System.out.println("Logging in Nurse!");
 		System.out.println("\tUsername: " + usernameTxt.getText());
 		System.out.println("\tPassword: " + passwordTxt.getText());
-		goNursePortal(evt);
+		if (app.checkEmployeeLogin(usernameTxt.getText(), passwordTxt.getText())) {
+			goNursePortal(evt);
+		}
 	}
 
 	@FXML
@@ -36,6 +40,8 @@ public class LoginController extends RoutingController {
 		System.out.println("Logging in Doctor!");
 		System.out.println("\tUsername: " + usernameTxt.getText());
 		System.out.println("\tPassword: " + passwordTxt.getText());
-		goDoctorPortal(evt);
+		if (app.checkEmployeeLogin(usernameTxt.getText(), passwordTxt.getText())) {
+			goDoctorPortal(evt);
+		}
 	}
 }

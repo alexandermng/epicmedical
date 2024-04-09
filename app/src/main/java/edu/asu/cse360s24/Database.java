@@ -17,6 +17,7 @@ public class Database {
 
 	public Database() {
 		this(System.getProperty("user.home") + File.separator + "epicmedical");
+		System.out.println(System.getProperty("user.home") + File.separator + "epicmedical");
 	}
 
 	public Database(String path) {
@@ -31,6 +32,9 @@ public class Database {
 				e.printStackTrace();
 			}
 		load();
+		for (HashMap.Entry<String, Patient> entry : data.patients.entrySet()) {
+			System.out.println(entry.getKey() + ", " +entry.getValue().getUsername() + ", " +entry.getValue().getPassword());
+		}
 	}
 
 	/**
@@ -43,6 +47,9 @@ public class Database {
 			System.err.println("Could not find database store");
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
+		}
+		if (data == null) {
+			data = new Store();
 		}
 	}
 
@@ -67,9 +74,12 @@ public class Database {
 	public Patient getPatient(String id) {
 		return data.patients.getOrDefault(id, new Patient(id));
 	}
-
-	class Store implements Serializable {
-		HashMap<String, Patient> patients; // patients by ID
-		HashMap<String, String> config; // idk, misc configstuffs
+	
+	public void addPatient(String k, Patient p) {
+		data.patients.put(k, p);
+	}
+	
+	public Store getData() {
+		return data;
 	}
 }

@@ -10,10 +10,10 @@
 <HBox alignment="CENTER" spacing="10.0">
 	<Label fx:id="nurseName" text="Generic Nurse" styleClass="title">
     	<HBox.margin>
-            <Insets right="205.0"/>
+            <Insets right="53.0"/>
         </HBox.margin>
     </Label>
-    
+    <Button text="New Patient" onAction="#goPatientSignup" style="-fx-font-size: 12; -fx-min-width: 100;" />
 	<Button text="Log Out" onAction="#goHomeLogin" style="-fx-font-size: 12; -fx-min-width: 100;" />
 </HBox>
 </top>
