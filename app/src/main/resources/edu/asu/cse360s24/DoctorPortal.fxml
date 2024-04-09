@@ -20,7 +20,7 @@
 
 <center>
 <GridPane hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
-	<!-- TODO... get list from DB interactively -->
+	<!-- TODO... get list from DB interactively... this will need to be vbox -->
 	<Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
 	<Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
 	<Label text="Date of Birth" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>

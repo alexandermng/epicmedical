@@ -35,7 +35,7 @@
 
 <bottom>
 <VBox alignment="CENTER">
-	<Button text="End Visit" onAction="#goDoctorPortal" style="-fx-font-size: 12; -fx-min-width: 150; -fx-min-height: 30"/>
+	<Button text="End Visit" onAction="#endVisit" style="-fx-font-size: 12; -fx-min-width: 150; -fx-min-height: 30"/>
 </VBox>
 </bottom>
 

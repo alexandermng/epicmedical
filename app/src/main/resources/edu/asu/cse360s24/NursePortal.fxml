@@ -4,24 +4,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.LoginViewController" style="-fx-background-color: lavender; -fx-padding: 10 10 10 10;">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.NurseController" stylesheets="@styles.css">
 
 <top>
 <HBox alignment="CENTER" spacing="10.0">
-	<Label text="[nurse name]" style="-fx-font-size: 24; -fx-min-width: 200;">
+	<Label fx:id="nurseName" text="Generic Nurse" styleClass="title">
     	<HBox.margin>
-            <Insets right="100.0"/>
+            <Insets right="205.0"/>
         </HBox.margin>
     </Label>
     
-    <Button text="New Patient" onAction="#signup" style="-fx-font-size: 12; -fx-min-width: 100;" />
-    
-	<Button text="Log Out" onAction="#homeLogin" style="-fx-font-size: 12; -fx-min-width: 100;" />
+	<Button text="Log Out" onAction="#goHomeLogin" style="-fx-font-size: 12; -fx-min-width: 100;" />
 </HBox>
 </top>
 
 <center>
 <GridPane hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+	<!-- TODO... get list from DB interactively... this will need to be vbox -->
 	<Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
 	<Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
 	<Label text="Date of Birth" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
@@ -30,8 +29,8 @@
 	<Label text="1/1/1970" GridPane.columnIndex="2" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
 	<HBox GridPane.columnIndex="3" GridPane.rowIndex="1" spacing="10.0">
 		<Label text="+1" style="-fx-font-size: 12; -fx-min-width: 20; -fx-max-width: 20;"/>
-		<Button text="New Visit" onAction="#newVisit" style="-fx-font-size: 12; -fx-min-width: 100;"/>
-		<Button text="Send Message" onAction="#nurseMessages" style="-fx-font-size: 12; -fx-min-width: 100;"/>
+		<Button text="Continue Visit" onAction="#goNewVisit" style="-fx-font-size: 12; -fx-min-width: 100;"/>
+		<Button text="Send Message" onAction="#goNurseMessages" style="-fx-font-size: 12; -fx-min-width: 100;"/>
 	</HBox>
 </GridPane>
 </center>

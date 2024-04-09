@@ -18,14 +18,16 @@ public class DoctorController extends AbstractController {
 	@FXML
 	protected void initialize() {
 		msgHistory = "";
-		docName.setText("DoctorName from DB");
+		if (docName != null)
+			docName.setText("DoctorName from DB");
 	}
 
 	/**
 	 * Append a message to file history
 	 */
 	private void appendMsg(String add) {
-		msgHistory += "-----------------\n" + docName.getText() + ":\n" + add + "\n-----------------";
+		// TODO get doc name from logged in Doctor
+		msgHistory += "-----------------\n" + "[doctor name here]" + ":\n" + add + "\n-----------------";
 		messageArea.setText(msgHistory);
 	}
 
@@ -38,7 +40,14 @@ public class DoctorController extends AbstractController {
 
 	@FXML
 	protected void sendPrescription(ActionEvent evt) {
-		System.out.println("Sending prescription!");
+		System.out.println("Sending prescription!"); // TODO prescribe... what's expected behavior here?
+	}
+
+	@FXML
+	protected void endVisit(ActionEvent evt) {
+		System.out.println("Ending visit!"); // runs on submit ContinueVisit
+		// TODO add to db
+		goDoctorPortal(evt);
 	}
 
 	/***** ROUTING *****/
