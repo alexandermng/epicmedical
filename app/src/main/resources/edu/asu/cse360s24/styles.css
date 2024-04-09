@@ -7,5 +7,6 @@
 
 .title {
 	-fx-font-size: 24;
-	-fx-min-width: 200;
+	-fx-min-width: 300;
+	-fx-max-width: 300;
 }

@@ -1,9 +1,10 @@
 package edu.asu.cse360s24;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 
 public class DoctorController extends RoutingController {
 	String msgHistory;
@@ -14,6 +15,10 @@ public class DoctorController extends RoutingController {
 	TextArea messageArea;
 	@FXML
 	TextArea messageBox;
+	@FXML
+	GridPane patientGrid;
+	@FXML
+	Button newPatientButton;
 
 	@Override
 	protected void init() {

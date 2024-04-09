@@ -10,28 +10,26 @@
 <HBox alignment="CENTER" spacing="10.0">
 	<Label fx:id="docName" text="Generic Doctor" styleClass="title">
     	<HBox.margin>
-            <Insets right="205.0"/>
+            <Insets right="240.0"/>
         </HBox.margin>
     </Label>
-    
+    <Button fx:id="newPatientBtn" text="New Patient" onAction="#goPatientSignup" style="-fx-font-size: 12; -fx-min-width: 100;" visible="false" />
 	<Button text="Log Out" onAction="#goHomeLogin" style="-fx-font-size: 12; -fx-min-width: 100;" />
 </HBox>
 </top>
 
 <center>
-<GridPane hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
-	<!-- TODO... get list from DB interactively... this will need to be vbox -->
-	<Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
-	<Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
-	<Label text="Date of Birth" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
-	<Label text="John" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
-	<Label text="Doe" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
-	<Label text="1/1/1970" GridPane.columnIndex="2" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
-	<HBox GridPane.columnIndex="3" GridPane.rowIndex="1" spacing="10.0">
-		<Label text="+1" style="-fx-font-size: 12; -fx-min-width: 20; -fx-max-width: 20;"/>
-		<Button text="Continue Visit" onAction="#continueVisit" style="-fx-font-size: 12; -fx-min-width: 100;"/>
-		<Button text="Send Message" onAction="#goDoctorMessages" style="-fx-font-size: 12; -fx-min-width: 100;"/>
-	</HBox>
+<GridPane fx:id="patientGrid" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+	<Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 120; -fx-max-width: 120; -fx-font-weight: bold;"/>
+	<Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 120; -fx-max-width: 120; -fx-font-weight: bold;"/>
+	<Label text="Date of Birth" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-max-width: 75; -fx-font-weight: bold;"/>
+	<!-- hardcoded entry -->
+	<Label text="John" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 100; -fx-max-width: 100;"/>
+	<Label text="Doe" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 100; -fx-max-width: 100;"/>
+	<Label text="1/1/1970" GridPane.columnIndex="2" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75; -fx-max-width: 75;"/>
+	<Label text="New Message" GridPane.columnIndex="3" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150; -fx-max-width: 150;"/>
+	<Button text="Continue Visit" GridPane.columnIndex="4" GridPane.rowIndex="1" onAction="#continueVisit" style="-fx-font-size: 12; -fx-min-width: 100;"/>
+	<Button text="Send Message" GridPane.columnIndex="5" GridPane.rowIndex="1" onAction="#goDoctorMessages" style="-fx-font-size: 12; -fx-min-width: 100;"/>
 </GridPane>
 </center>
 
