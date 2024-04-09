@@ -14,13 +14,12 @@
 
 <center>
 <GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
-	<!-- TODO: wire up -->
-	<TextField fx:id="FirstName" promptText="First Name"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField fx:id="LastName" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField fx:id="Username" promptText="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<PasswordField fx:id="Password" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField fx:id="PhoneNum" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<DatePicker fx:id="Birthdate" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+	<TextField fx:id="firstName" promptText="First Name"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField fx:id="lastName" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField fx:id="username" promptText="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<PasswordField fx:id="password" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<TextField fx:id="phoneNum" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;"/>
+	<DatePicker fx:id="birthdate" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 </GridPane>
 </center>
 

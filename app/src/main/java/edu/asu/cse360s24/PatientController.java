@@ -21,31 +21,24 @@ public class PatientController extends RoutingController {
 	TextArea messageBox;
 
 	@FXML
-	TextField FirstName;
+	TextField firstName;
 	@FXML
-	TextField LastName;
+	TextField lastName;
 	@FXML
-	TextField Username;
+	TextField username;
 	@FXML
-	PasswordField Password;
+	PasswordField password;
 	@FXML
-	TextField PhoneNum;
+	TextField phoneNum;
 	@FXML
-	DatePicker Birthdate;
+	DatePicker birthdate;
 
 	@FXML
-	TextField MemberID;
+	TextField insuranceMemberID;
 	@FXML
-	TextField InsuranceCompany;
+	TextField insuranceCompany;
 	@FXML
-	TextField Pharmacy;
-
-	String FirstName_entry;
-	String LastName_entry;
-	String Username_entry;
-	String Password_entry;
-	String PhoneNum_entry;
-	String Birthdate_entry;
+	TextField pharmacy;
 
 	@Override
 	protected void init() {
@@ -76,11 +69,11 @@ public class PatientController extends RoutingController {
 
 	@FXML
 	protected void patientSignup(ActionEvent evt) {
-		System.out.println("Signed up patient!"); // runs at end of PatientSignup2
-		app.currentPatient.setInsuranceID(MemberID.getText());
-		app.currentPatient.setInsuranceCompany(InsuranceCompany.getText());
-		app.currentPatient.setPharmacy(Pharmacy.getText());
+		app.currentPatient.setInsuranceID(insuranceMemberID.getText());
+		app.currentPatient.setInsuranceCompany(insuranceCompany.getText());
+		app.currentPatient.setPharmacy(pharmacy.getText());
 		app.db.addPatient(app.currentPatient.id, app.currentPatient);
+		// TODO: if done by Nurse, then go to NursePortal
 		goHomeLogin(evt);
 	}
 
@@ -88,12 +81,12 @@ public class PatientController extends RoutingController {
 	protected void patientSignup2(ActionEvent evt) {
 		String newID = Patient.generateID();
 		app.currentPatient = new Patient(newID);
-		app.currentPatient.setFirstName(FirstName.getText());
-		app.currentPatient.setLastName(LastName.getText());
-		app.currentPatient.setUsername(Username.getText());
-		app.currentPatient.setPassword(Password.getText());
-		app.currentPatient.setPhoneNumber(PhoneNum.getText());
-		app.currentPatient.setDateOfBirth(Birthdate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+		app.currentPatient.setFirstName(firstName.getText());
+		app.currentPatient.setLastName(lastName.getText());
+		app.currentPatient.setUsername(username.getText());
+		app.currentPatient.setPassword(password.getText());
+		app.currentPatient.setPhoneNumber(phoneNum.getText());
+		app.currentPatient.setDateOfBirth(birthdate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 		goPatientSignup2(evt);
 	}
 }
