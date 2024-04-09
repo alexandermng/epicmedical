@@ -39,7 +39,7 @@ public class PatientController extends RoutingController {
 	@Override
 	protected void init() {
 		if (patientName != null)
-			patientName.setText(app.currentPatient.firstName);
+			patientName.setText(app.currentUser.firstName);
 	}
 
 	/**

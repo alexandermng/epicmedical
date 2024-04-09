@@ -13,6 +13,7 @@ public class Main extends Application {
 	private Stage primary;
 	Database db;
 	Patient currentPatient;
+	Person currentUser;
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -53,7 +54,7 @@ public class Main extends Application {
 			Patient temp = entry.getValue();
 			if (temp.username.equals(username) && temp.password.equals(password)) {
 				System.out.println("Login Successful");
-				currentPatient = temp;
+				currentUser = temp;
 				return true;
 			}
 		}

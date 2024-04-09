@@ -1,6 +1,5 @@
 package edu.asu.cse360s24;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
