@@ -19,7 +19,7 @@ public class PatientController extends RoutingController {
 	TextArea messageArea;
 	@FXML
 	TextArea messageBox;
-	
+
 	@FXML
 	TextField FirstName;
 	@FXML
@@ -32,14 +32,14 @@ public class PatientController extends RoutingController {
 	TextField PhoneNum;
 	@FXML
 	DatePicker Birthdate;
-	
+
 	@FXML
 	TextField MemberID;
 	@FXML
 	TextField InsuranceCompany;
 	@FXML
 	TextField Pharmacy;
-	
+
 	String FirstName_entry;
 	String LastName_entry;
 	String Username_entry;
@@ -47,12 +47,8 @@ public class PatientController extends RoutingController {
 	String PhoneNum_entry;
 	String Birthdate_entry;
 
-	@FXML
-	protected void initialize() {
-	
-	}
-	
-	public void updatePage() {
+	@Override
+	protected void init() {
 		if (patientName != null)
 			patientName.setText(app.currentPatient.firstName);
 	}
@@ -87,7 +83,7 @@ public class PatientController extends RoutingController {
 		app.db.addPatient(app.currentPatient.id, app.currentPatient);
 		goHomeLogin(evt);
 	}
-	
+
 	@FXML
 	protected void patientSignup2(ActionEvent evt) {
 		String newID = Patient.generateID();

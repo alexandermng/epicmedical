@@ -15,15 +15,11 @@ public class DoctorController extends RoutingController {
 	@FXML
 	TextArea messageBox;
 
-	@FXML
-	protected void initialize() {
+	@Override
+	protected void init() {
 		msgHistory = "";
 		if (docName != null)
 			docName.setText("DoctorName from DB");
-	}
-	
-	public void updatePage() {
-		
 	}
 
 	/**

@@ -11,9 +11,10 @@ public class LoginController extends RoutingController {
 
 	@FXML
 	PasswordField passwordTxt;
-	
-	public void updatePage() {
-		
+
+	@Override
+	protected void init() {
+
 	}
 
 	@FXML

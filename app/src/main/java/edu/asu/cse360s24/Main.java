@@ -42,17 +42,13 @@ public class Main extends Application {
 		RoutingController cont = loader.getController();
 		cont.setApp(this);
 		primary.setScene(new Scene(root, 540, 400));
-		
-		// call updatePage() because initialize() can't access superclass
-		// and therefore can't access the instance of Main
-		RoutingController r = (RoutingController) loader.getController();
-		r.updatePage();
 	}
-	
+
 	public boolean checkPatientLogin(String username, String password) {
 		HashMap<String, Patient> patientMap = db.getData().patients;
-		if (patientMap == null) return false; // if no patients in db
-		
+		if (patientMap == null)
+			return false; // if no patients in db
+
 		for (HashMap.Entry<String, Patient> entry : patientMap.entrySet()) {
 			Patient temp = entry.getValue();
 			if (temp.username.equals(username) && temp.password.equals(password)) {
@@ -61,17 +57,15 @@ public class Main extends Application {
 				return true;
 			}
 		}
-		
+
 		System.out.println("Incorrect username or password");
 		return false;
 	}
-	
+
 	public boolean checkEmployeeLogin(String username, String password) {
 		// TODO: actually check lol
 		return true;
 	}
-	
-	
 
 	public static void main(String[] args) {
 		System.out.println("Yo");

@@ -32,8 +32,11 @@ public class Database {
 				e.printStackTrace();
 			}
 		load();
+
+		// DEBUG
 		for (HashMap.Entry<String, Patient> entry : data.patients.entrySet()) {
-			System.out.println(entry.getKey() + ", " +entry.getValue().getUsername() + ", " +entry.getValue().getPassword());
+			System.out
+					.println(entry.getKey() + ", " + entry.getValue().getUsername() + ", " + entry.getValue().getPassword());
 		}
 	}
 
@@ -57,7 +60,6 @@ public class Database {
 	 * Saves in-memory changes to the backing store.
 	 */
 	void save() {
-		// TODO: test if repeat calls overwrite or append
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(backing))) {
 			oos.writeObject(data);
 		} catch (IOException e) {
@@ -74,12 +76,25 @@ public class Database {
 	public Patient getPatient(String id) {
 		return data.patients.getOrDefault(id, new Patient(id));
 	}
-	
-	public void addPatient(String k, Patient p) {
-		data.patients.put(k, p);
+
+	public void addPatient(String id, Patient p) {
+		data.patients.put(id, p);
 	}
-	
+
 	public Store getData() {
 		return data;
+	}
+
+	/**
+	 * Data storage
+	 */
+	static class Store implements Serializable {
+		HashMap<String, Patient> patients; // patients by ID
+		HashMap<String, String> config; // idk, misc configstuffs
+
+		public Store() {
+			patients = new HashMap<String, Patient>();
+			config = new HashMap<String, String>();
+		}
 	}
 }
