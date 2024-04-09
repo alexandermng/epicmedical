@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.LoginViewController" style="-fx-background-color: lavender; -fx-padding: 10 10 10 10;">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.PatientController" stylesheets="@styles.css">
 
 <top>
 <VBox alignment="CENTER">
@@ -14,6 +14,7 @@
 
 <center>
 <GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+	<!-- TODO: wire up -->
 	<TextField promptText="Insurance Member ID"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 300;"/>
 	<TextField promptText="Insurance Company" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 300;"/>
 	<TextField promptText="Pharmacy" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 300;"/>
@@ -22,7 +23,7 @@
 
 <bottom>
 <VBox alignment="CENTER">
-	<Button text="Sign Up" onAction="#homeLogin" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
+	<Button text="Sign Up" onAction="#patientSignup" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
 </VBox>
 </bottom>
 

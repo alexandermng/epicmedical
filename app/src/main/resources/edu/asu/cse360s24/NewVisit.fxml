@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.NurseController" style="-fx-background-color: lavender; -fx-padding: 10 10 10 10;">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.NurseController" stylesheets="@styles.css">
 
 <top>
 <VBox alignment="CENTER">

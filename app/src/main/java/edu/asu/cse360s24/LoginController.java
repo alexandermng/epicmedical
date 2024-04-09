@@ -75,26 +75,4 @@ public class LoginController extends AbstractController {
 	protected void goHomeLogin(ActionEvent evt) {
 		app.loadScene("Login.fxml");
 	}
-
-	// DELETE
-
-	@FXML
-	protected void saveInfo(ActionEvent evt) {
-		System.out.println("Saving Info");
-	}
-
-	@FXML
-	protected void goPatientMessages(ActionEvent evt) {
-		app.loadScene("PatientMessaging.fxml");
-	}
-
-	@FXML
-	protected void goPatientSignup(ActionEvent evt) {
-		app.loadScene("PatientSignup1.fxml");
-	}
-
-	@FXML
-	protected void goPatientSignup2(ActionEvent evt) {
-		app.loadScene("PatientSignup2.fxml");
-	}
 }
