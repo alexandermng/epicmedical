@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-public class DoctorController extends AbstractController {
+public class DoctorController extends RoutingController {
 	String msgHistory;
 
 	@FXML
@@ -44,37 +44,16 @@ public class DoctorController extends AbstractController {
 	}
 
 	@FXML
+	protected void continueVisit(ActionEvent evt) {
+		System.out.println("Continuing visit!"); // runs on start ContinueVisit
+		// TODO: load visit info from DB?
+		goContVisit(evt);
+	}
+
+	@FXML
 	protected void endVisit(ActionEvent evt) {
 		System.out.println("Ending visit!"); // runs on submit ContinueVisit
 		// TODO add to db
 		goDoctorPortal(evt);
 	}
-
-	/***** ROUTING *****/
-
-	@FXML
-	protected void goDoctorPortal(ActionEvent evt) {
-		app.loadScene("DoctorPortal.fxml");
-	}
-
-	@FXML
-	protected void goDoctorMessages(ActionEvent evt) {
-		app.loadScene("DoctorMessaging.fxml");
-	}
-
-	@FXML
-	protected void goNewVisit(ActionEvent evt) { // TODO logic upon deciding new or continue visit
-		app.loadScene("NewVisit.fxml");
-	}
-
-	@FXML
-	protected void goContVisit(ActionEvent evt) {
-		app.loadScene("ContinueVisit.fxml");
-	}
-
-	@FXML
-	protected void goHomeLogin(ActionEvent evt) {
-		app.loadScene("Login.fxml");
-	}
-
 }

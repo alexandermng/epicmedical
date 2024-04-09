@@ -37,7 +37,7 @@ public class Main extends Application {
 			e.printStackTrace();
 			return;
 		}
-		AbstractController cont = loader.getController();
+		RoutingController cont = loader.getController();
 		cont.setApp(this);
 		primary.setScene(new Scene(root, 540, 400));
 	}

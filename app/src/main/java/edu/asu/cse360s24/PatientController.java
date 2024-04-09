@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-public class PatientController extends AbstractController {
+public class PatientController extends RoutingController {
 	String msgHistory;
 
 	@FXML
@@ -46,32 +46,5 @@ public class PatientController extends AbstractController {
 	protected void patientSignup(ActionEvent evt) {
 		System.out.println("Signed up patient!"); // runs at end of PatientSignup2
 		goHomeLogin(evt);
-	}
-
-	/***** ROUTING *****/
-
-	@FXML
-	protected void goHomeLogin(ActionEvent evt) {
-		app.loadScene("Login.fxml");
-	}
-
-	@FXML
-	protected void goPatientPortal(ActionEvent evt) {
-		app.loadScene("PatientPortal.fxml");
-	}
-
-	@FXML
-	protected void goPatientMessages(ActionEvent evt) {
-		app.loadScene("PatientMessaging.fxml");
-	}
-
-	@FXML
-	protected void goPatientSignup(ActionEvent evt) {
-		app.loadScene("PatientSignup1.fxml");
-	}
-
-	@FXML
-	protected void goPatientSignup2(ActionEvent evt) {
-		app.loadScene("PatientSignup2.fxml");
 	}
 }

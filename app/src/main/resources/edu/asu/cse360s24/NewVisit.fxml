@@ -35,7 +35,7 @@
 
 <bottom>
 <VBox alignment="CENTER">
-	<Button text="Send to Doctor" onAction="#registerPatient" style="-fx-font-size: 12; -fx-min-width: 150; -fx-min-height: 30"/>
+	<Button text="Send to Doctor" onAction="#finishVisit" style="-fx-font-size: 12; -fx-min-width: 150; -fx-min-height: 30"/>
 </VBox>
 </bottom>
 
