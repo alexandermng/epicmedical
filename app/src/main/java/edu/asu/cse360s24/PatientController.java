@@ -62,7 +62,7 @@ public class PatientController extends RoutingController {
 	protected void saveInfo(ActionEvent evt) {
 		System.out.println("Saving Info");
 	}
-	
+
 	@FXML
 	protected void patientLogout(ActionEvent evt) {
 		app.currentUser = null;
@@ -76,6 +76,8 @@ public class PatientController extends RoutingController {
 		app.currentPatient.setPharmacy(pharmacy.getText());
 		app.db.addPatient(app.currentPatient.id, app.currentPatient);
 		// TODO: if done by Nurse, then go to NursePortal
+		System.out.printf("Added patient [%s]:\n\tUsername: %s\n\tPassword: %s",
+				app.currentPatient.id, app.currentPatient.username, app.currentPatient.password);
 		goNursePortal(evt);
 	}
 
