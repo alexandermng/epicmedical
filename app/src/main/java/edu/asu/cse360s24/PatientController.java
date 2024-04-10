@@ -37,8 +37,6 @@ public class PatientController extends RoutingController {
 	TextField pharmacy;
 
 	@FXML
-	ComboBox<?> visitHistory;
-	@FXML
 	Label patDoctor;
 	@FXML
 	Label patNurse;
