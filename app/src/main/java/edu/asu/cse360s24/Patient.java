@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Patient extends Person {
 
+	private static final long serialVersionUID = 1L;
 	String id;
 	String dateOfBirth; // "YYYY-MM-DD"
 	int age;
@@ -14,6 +15,7 @@ public class Patient extends Person {
 	String pharmacy;
 	String emergencyContact;
 
+	Visit activeVisit;
 	ArrayList<Visit> visits;
 	ArrayList<Message> messages;
 
@@ -24,6 +26,7 @@ public class Patient extends Person {
 		super();
 		this.id = id;
 		this.messages = new ArrayList<Message>();
+		this.visits = new ArrayList<Visit>();
 	}
 
 	/***** STATIC *****/

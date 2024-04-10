@@ -35,11 +35,20 @@ public class PatientController extends RoutingController {
 	TextField insuranceCompany;
 	@FXML
 	TextField pharmacy;
+	@FXML
+	ComboBox<Visit> visitHistory;
 
 	@Override
 	protected void init() {
 		if (patientName != null)
 			patientName.setText(app.currentUser.firstName);
+		
+		if (visitHistory != null) {
+			Patient p = (Patient) app.currentUser;
+			for (Visit v : p.visits) {
+				visitHistory.getItems().add(v);
+			}
+		}
 	}
 
 	/**
@@ -90,7 +99,7 @@ public class PatientController extends RoutingController {
 		app.currentPatient.setUsername(username.getText());
 		app.currentPatient.setPassword(password.getText());
 		app.currentPatient.setPhoneNumber(phoneNum.getText());
-		app.currentPatient.setDateOfBirth(birthdate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+		app.currentPatient.setDateOfBirth(birthdate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
 		goPatientSignup2(evt);
 	}
 }

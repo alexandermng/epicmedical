@@ -1,6 +1,10 @@
 package edu.asu.cse360s24;
 
-public class Visit {
+import java.io.Serializable;
+
+public class Visit implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	String date;
 	Doctor doctor;
@@ -14,7 +18,7 @@ public class Visit {
 	String concerns;
 	
 	String previousIssues;
-	String prescriptionHistory;
+	String prescriptions;
 	String immuneHistory;
 	String recommendations;
 	String examNotes;
@@ -24,4 +28,7 @@ public class Visit {
 		
 	}
 
+	public String toString() {
+		return "Visit with Dr. "+doctor.lastName+" on "+date;
+	}
 }

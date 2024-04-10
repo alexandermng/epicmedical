@@ -19,11 +19,12 @@
 </top>
 
 <center>
-<GridPane hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+<GridPane fx:id="patientList" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
 	<!-- TODO... get list from DB interactively... this will need to be vbox -->
 	<Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
 	<Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
 	<Label text="Date of Birth" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 75; -fx-font-weight: bold;"/>
+	<!-- 
 	<Label text="John" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
 	<Label text="Doe" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
 	<Label text="1/1/1970" GridPane.columnIndex="2" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 75;"/>
@@ -32,6 +33,7 @@
 		<Button text="New Visit" onAction="#startVisit" style="-fx-font-size: 12; -fx-min-width: 100;"/>
 		<Button text="Send Message" onAction="#goNurseMessages" style="-fx-font-size: 12; -fx-min-width: 100;"/>
 	</HBox>
+	-->
 </GridPane>
 </center>
 
