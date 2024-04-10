@@ -138,8 +138,10 @@ public class DoctorController extends RoutingController {
 		Visit v = app.currentPatient.activeVisit;
 		v.examNotes = examNotes.getText();
 		v.recommendations = recommendations.getText();
-		v.prescriptions = prescriptions.getText();
+		v.prescription = prescriptions.getText();
 		v.doctor = (Doctor) app.currentUser;
+		
+		app.currentPatient.doctor = v.doctor;
 		app.currentPatient.visits.add(v);
 		app.currentPatient.activeVisit = null;
 

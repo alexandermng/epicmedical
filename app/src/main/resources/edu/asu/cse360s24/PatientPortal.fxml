@@ -32,7 +32,7 @@
     
     <ComboBox fx:id="visitHistory" promptText="Select Visit" style="-fx-font-size: 12;  -fx-min-width: 300;" />
     
-    <Label text="No Data" style="-fx-font-size: 16; -fx-background-color: white; -fx-min-height: 400; -fx-min-width: 400; -fx-padding: 10 10 10 10;" />
+    <Label fx:id="visitBody" text="No Data" style="-fx-font-size: 16; -fx-background-color: white; -fx-min-height: 400; -fx-min-width: 400; -fx-padding: 10 10 10 10;" />
 
 </VBox>
 </center>

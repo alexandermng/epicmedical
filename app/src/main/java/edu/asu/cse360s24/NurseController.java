@@ -132,6 +132,7 @@ public class NurseController extends RoutingController {
 		v.date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
 		v.nurse = (Nurse) app.currentUser;
 		
+		app.currentPatient.nurse = v.nurse;
 		app.currentPatient.activeVisit = v;
 		goNursePortal(evt);
 	}
