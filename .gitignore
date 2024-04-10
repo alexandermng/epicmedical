@@ -3,6 +3,7 @@
 .classpath
 .project
 .settings/
+app/.settings/
 
 # Ignore Gradle project-specific cache directory
 .gradle
