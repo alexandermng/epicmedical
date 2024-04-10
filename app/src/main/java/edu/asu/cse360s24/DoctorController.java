@@ -23,7 +23,7 @@ public class DoctorController extends RoutingController {
 	protected void init() {
 		msgHistory = "";
 		if (docName != null)
-			docName.setText("DoctorName from DB");
+			docName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
 	}
 
 	/**
@@ -33,6 +33,12 @@ public class DoctorController extends RoutingController {
 		// TODO get doc name from logged in Doctor
 		msgHistory += "-----------------\n" + "[doctor name here]" + ":\n" + add + "\n-----------------";
 		messageArea.setText(msgHistory);
+	}
+	
+	@FXML
+	protected void doctorLogout(ActionEvent evt) {
+		app.currentUser = null;
+		goHomeLogin(evt);
 	}
 
 	@FXML

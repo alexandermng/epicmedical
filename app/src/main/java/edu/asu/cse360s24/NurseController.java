@@ -20,7 +20,7 @@ public class NurseController extends RoutingController {
 	protected void init() {
 		msgHistory = "";
 		if (nurseName != null)
-			nurseName.setText("NurseName from DB");
+			nurseName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
 	}
 
 	/**
@@ -30,6 +30,12 @@ public class NurseController extends RoutingController {
 		// TODO get nurse name from logged in Nurse
 		msgHistory += "-----------------\n" + "[nurse name here]" + ":\n" + add + "\n-----------------";
 		messageArea.setText(msgHistory);
+	}
+	
+	@FXML
+	protected void nurseLogout(ActionEvent evt) {
+		app.currentUser = null;
+		goHomeLogin(evt);
 	}
 
 	@FXML

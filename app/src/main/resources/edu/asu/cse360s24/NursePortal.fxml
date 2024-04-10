@@ -14,7 +14,7 @@
         </HBox.margin>
     </Label>
     <Button text="New Patient" onAction="#goPatientSignup" style="-fx-font-size: 12; -fx-min-width: 100;" />
-	<Button text="Log Out" onAction="#goHomeLogin" style="-fx-font-size: 12; -fx-min-width: 100;" />
+	<Button text="Log Out" onAction="#nurseLogout" style="-fx-font-size: 12; -fx-min-width: 100;" />
 </HBox>
 </top>
 

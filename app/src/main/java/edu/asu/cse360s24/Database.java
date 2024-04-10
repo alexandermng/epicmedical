@@ -34,9 +34,8 @@ public class Database {
 		load();
 
 		// DEBUG
-		for (HashMap.Entry<String, Patient> entry : data.patients.entrySet()) {
-			System.out
-					.println(entry.getKey() + ", " + entry.getValue().getUsername() + ", " + entry.getValue().getPassword());
+		for (HashMap.Entry<String, Doctor> entry : data.doctors.entrySet()) {
+			System.out.println(entry.getKey() + ", " + entry.getValue().getUsername() + ", " + entry.getValue().getPassword());
 		}
 	}
 

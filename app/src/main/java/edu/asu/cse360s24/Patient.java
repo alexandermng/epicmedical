@@ -1,5 +1,6 @@
 package edu.asu.cse360s24;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.io.Serializable;
 
@@ -14,6 +15,8 @@ public class Patient extends Person implements Serializable {
     String insuranceCompany;
     String pharmacy;
     String emergencyContact;
+    
+    ArrayList<Visit> previousVisits;
     
     Doctor doctor;
     Nurse nurse;
