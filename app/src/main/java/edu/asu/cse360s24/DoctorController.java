@@ -19,6 +19,10 @@ public class DoctorController extends RoutingController {
 	GridPane patientGrid;
 	@FXML
 	Button newPatientButton;
+	@FXML
+	Label patientMsgName;
+	@FXML
+	Button callButton;
 
 	@Override
 	protected void init() {
