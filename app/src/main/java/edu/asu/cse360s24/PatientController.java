@@ -48,6 +48,11 @@ public class PatientController extends RoutingController {
 	TextField patAddress;
 	@FXML
 	TextField patPhone;
+	
+	@FXML
+	Label docMsgName;
+	@FXML
+	Button callButton;
 
 	@Override
 	protected void init() {
