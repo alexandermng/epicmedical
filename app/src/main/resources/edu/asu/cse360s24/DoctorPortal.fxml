@@ -13,7 +13,7 @@
             <Insets right="240.0"/>
         </HBox.margin>
     </Label>
-    <Button fx:id="newPatientBtn" text="New Patient" onAction="#goPatientSignup" style="-fx-font-size: 12; -fx-min-width: 100;" visible="false" />
+    <Button fx:id="newPatientButton" text="New Patient" onAction="#goPatientSignup" style="-fx-font-size: 12; -fx-min-width: 100;" visible="false" />
 	<Button text="Log Out" onAction="#goHomeLogin" style="-fx-font-size: 12; -fx-min-width: 100;" />
 </HBox>
 </top>

@@ -35,6 +35,19 @@ public class PatientController extends RoutingController {
 	TextField insuranceCompany;
 	@FXML
 	TextField pharmacy;
+	
+	@FXML
+	ComboBox<?> visitHistory;
+	@FXML
+	Label patDoctor;
+	@FXML
+	Label patNurse;
+	@FXML
+	TextField patName;
+	@FXML
+	TextField patAddress;
+	@FXML
+	TextField patPhone;
 
 	@Override
 	protected void init() {
