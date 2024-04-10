@@ -2,35 +2,39 @@ package edu.asu.cse360s24;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.io.Serializable;
 
-public class Patient extends Person implements Serializable {
+public class Patient extends Person {
 
-	private static final long serialVersionUID = 1L;
-    String id;
-    String dateOfBirth; // "YYYY-MM-DD"
-    int age;
-    String phoneNumber; // "###-###-####"
-    String insuranceID;
-    String insuranceCompany;
-    String pharmacy;
-    String emergencyContact;
-    
-    ArrayList<Visit> previousVisits;
-    
-    Doctor doctor;
-    Nurse nurse;
+	String id;
+	String dateOfBirth; // "YYYY-MM-DD"
+	int age;
+	String phoneNumber; // "###-###-####"
+	String insuranceID;
+	String insuranceCompany;
+	String pharmacy;
+	String emergencyContact;
 
-    public Patient(String id) {
-    	super();
-        this.id = id;
-    }
+	ArrayList<Visit> visits;
+	ArrayList<Message> messages;
 
-    private static Random rand = new Random();
+	Doctor doctor;
+	Nurse nurse;
 
-    static String generateID() {
-        return String.valueOf(rand.nextInt(99999));
-    }
+	public Patient(String id) {
+		super();
+		this.id = id;
+		this.messages = new ArrayList<Message>();
+	}
+
+	/***** STATIC *****/
+
+	private static Random rand = new Random();
+
+	static String generateID() {
+		return String.valueOf(rand.nextInt(99999));
+	}
+
+	/***** ACCESS *****/
 
 	public String getDateOfBirth() {
 		return dateOfBirth;
