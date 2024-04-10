@@ -34,9 +34,8 @@ public class Database {
 		load();
 
 		// DEBUG
-		for (HashMap.Entry<String, Patient> entry : data.patients.entrySet()) {
-			System.out
-					.println(entry.getKey() + ", " + entry.getValue().getUsername() + ", " + entry.getValue().getPassword());
+		for (HashMap.Entry<String, Doctor> entry : data.doctors.entrySet()) {
+			System.out.println(entry.getKey() + ", " + entry.getValue().getUsername() + ", " + entry.getValue().getPassword());
 		}
 	}
 
@@ -89,12 +88,17 @@ public class Database {
 	 * Data storage
 	 */
 	static class Store implements Serializable {
+		private static final long serialVersionUID = 1L;
 		HashMap<String, Patient> patients; // patients by ID
 		HashMap<String, String> config; // idk, misc configstuffs
+		HashMap<String, Doctor> doctors;
+		HashMap<String, Nurse> nurses;
 
 		public Store() {
 			patients = new HashMap<String, Patient>();
 			config = new HashMap<String, String>();
+			doctors = new HashMap<String, Doctor>();
+			nurses = new HashMap<String, Nurse>();
 		}
 	}
 }

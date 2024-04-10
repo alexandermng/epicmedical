@@ -35,7 +35,7 @@ public class PatientController extends RoutingController {
 	TextField insuranceCompany;
 	@FXML
 	TextField pharmacy;
-	
+
 	@FXML
 	ComboBox<?> visitHistory;
 	@FXML
@@ -48,16 +48,26 @@ public class PatientController extends RoutingController {
 	TextField patAddress;
 	@FXML
 	TextField patPhone;
-	
+
 	@FXML
 	Label docMsgName;
 	@FXML
 	Button callButton;
 
+	@FXML
+	ComboBox<Visit> visitHistory;
+
 	@Override
 	protected void init() {
 		if (patientName != null)
-			patientName.setText(app.currentPatient.firstName);
+			patientName.setText(app.currentUser.firstName);
+
+		if (visitHistory != null) {
+			Patient p = (Patient) app.currentUser;
+			for (Visit v : p.visits) {
+				visitHistory.getItems().add(v);
+			}
+		}
 	}
 
 	/**
@@ -82,13 +92,21 @@ public class PatientController extends RoutingController {
 	}
 
 	@FXML
+	protected void patientLogout(ActionEvent evt) {
+		app.currentUser = null;
+		goHomeLogin(evt);
+	}
+
+	@FXML
 	protected void patientSignup(ActionEvent evt) {
 		app.currentPatient.setInsuranceID(insuranceMemberID.getText());
 		app.currentPatient.setInsuranceCompany(insuranceCompany.getText());
 		app.currentPatient.setPharmacy(pharmacy.getText());
 		app.db.addPatient(app.currentPatient.id, app.currentPatient);
 		// TODO: if done by Nurse, then go to NursePortal
-		goHomeLogin(evt);
+		System.out.printf("Added patient [%s]:\n\tUsername: %s\n\tPassword: %s",
+				app.currentPatient.id, app.currentPatient.username, app.currentPatient.password);
+		goNursePortal(evt);
 	}
 
 	@FXML
@@ -100,7 +118,7 @@ public class PatientController extends RoutingController {
 		app.currentPatient.setUsername(username.getText());
 		app.currentPatient.setPassword(password.getText());
 		app.currentPatient.setPhoneNumber(phoneNum.getText());
-		app.currentPatient.setDateOfBirth(birthdate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+		app.currentPatient.setDateOfBirth(birthdate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
 		goPatientSignup2(evt);
 	}
 }

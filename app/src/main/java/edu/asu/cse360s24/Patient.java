@@ -1,66 +1,43 @@
 package edu.asu.cse360s24;
 
-import java.util.Random;
-import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Random;
 
-public class Patient implements Serializable {
+public class Patient extends Person {
 
-    String id;
-    String firstName;
-	String lastName;
-    String username;
-    String password;
-    String dateOfBirth; // "YYYY-MM-DD"
-    int age;
-    String phoneNumber; // "###-###-####"
-    String insuranceID;
-    String insuranceCompany;
-    String pharmacy;
-    ArrayList<Message> messages;
+	private static final long serialVersionUID = 1L;
+	String id;
+	String dateOfBirth; // "YYYY-MM-DD"
+	int age;
+	String phoneNumber; // "###-###-####"
+	String insuranceID;
+	String insuranceCompany;
+	String pharmacy;
+	String emergencyContact;
 
-    public Patient(String id) {
-        this.id = id;
-        this.messages = new ArrayList<Message>();
-    }
+	Visit activeVisit;
+	ArrayList<Visit> visits;
+	ArrayList<Message> messages;
 
-    private static Random rand = new Random();
+	Doctor doctor;
+	Nurse nurse;
 
-    static String generateID() {
-        return String.valueOf(rand.nextInt(99999));
-    }
-    
-    public String getFirstName() {
-		return firstName;
+	public Patient(String id) {
+		super();
+		this.id = id;
+		this.messages = new ArrayList<Message>();
+		this.visits = new ArrayList<Visit>();
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	/***** STATIC *****/
+
+	private static Random rand = new Random();
+
+	static String generateID() {
+		return String.valueOf(rand.nextInt(99999));
 	}
 
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	/***** ACCESS *****/
 
 	public String getDateOfBirth() {
 		return dateOfBirth;
