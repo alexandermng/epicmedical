@@ -60,7 +60,7 @@
     	<Label fx:id="patNurse" text="n/a" style="-fx-font-size: 12; -fx-max-width: 150; -fx-min-width: 150;"/>
     </HBox>
     
-    <Button alignment="CENTER" text="Send Message" onAction="#goPatientMessages" style="-fx-font-size: 12; -fx-min-width: 75; -fx-padding: 5 5 5 5;">
+    <Button alignment="CENTER" text="Send Message" onAction="#goMessaging" style="-fx-font-size: 12; -fx-min-width: 75; -fx-padding: 5 5 5 5;">
     	<VBox.margin>
             <Insets top="10.0"/>
         </VBox.margin>

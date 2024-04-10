@@ -4,17 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.PatientController" stylesheets="@styles.css">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.MessagingController" stylesheets="@styles.css">
 
 <top>
 <HBox alignment="CENTER" spacing="10.0">
-	<Label fx:id="patientName" text="Generic Patient" styleClass="title">
+	<Label fx:id="sender" text="Generic Sender" styleClass="title">
     	<HBox.margin>
             <Insets right="200.0"/>
         </HBox.margin>
     </Label>
     
-	<Button text="Return to Portal" onAction="#goPatientPortal" style="-fx-min-width: 150;" />
+	<Button text="Return to Portal" onAction="#returnToPortal" style="-fx-min-width: 150;" />
 </HBox>
 </top>
 
@@ -25,9 +25,8 @@
     </padding>
     
     <HBox>
-        <!-- TODO: wire up -->
-    	<Label fx:id="docMsgName" text="Doctor/Nurse Name" style="-fx-font-size: 16; -fx-min-width: 200; -fx-padding: 5 5 5 30;" />
-    	<Button fx:id="callButton" text="Call" style="-fx-font-size: 12; -fx-min-width: 75;"/>
+    	<Label fx:id="recipient" text="Generic Recipient" style="-fx-font-size: 16; -fx-min-width: 200; -fx-padding: 5 5 5 30;" />
+    	<Button text="Call" onAction="#callRecipient" style="-fx-font-size: 12; -fx-min-width: 75;"/>
     </HBox>
     
     <TextArea fx:id="messageArea" promptText="Messages" editable="false" style="-fx-min-height: 200; -fx-min-width: 450; -fx-padding: 5; -fx-background-color: white" />

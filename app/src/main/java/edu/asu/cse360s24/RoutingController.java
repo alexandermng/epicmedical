@@ -77,17 +77,7 @@ public abstract class RoutingController {
 	}
 
 	@FXML
-	protected void goDoctorMessages(ActionEvent evt) {
-		app.loadScene("DoctorMessaging.fxml");
-	}
-
-	@FXML
-	protected void goNurseMessages(ActionEvent evt) {
-		app.loadScene("NurseMessaging.fxml");
-	}
-
-	@FXML
-	protected void goPatientMessages(ActionEvent evt) {
-		app.loadScene("PatientMessaging.fxml");
+	protected void goMessaging(ActionEvent evt) {
+		app.loadScene("Messaging.fxml");
 	}
 }
