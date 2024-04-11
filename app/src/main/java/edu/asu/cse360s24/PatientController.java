@@ -84,10 +84,10 @@ public class PatientController extends RoutingController {
 		        visitHistory.setOnAction(event);
 			}
 			
-			if (patDoctor != null)
+			if (patDoctor != null && self.doctor != null)
 				patDoctor.setText(self.doctor.firstName+" "+self.doctor.lastName);
 			
-			if (patNurse != null)
+			if (patNurse != null && self.nurse != null)
 				patNurse.setText(self.nurse.firstName+" "+self.nurse.lastName);
 			
 			if (patName != null) {
