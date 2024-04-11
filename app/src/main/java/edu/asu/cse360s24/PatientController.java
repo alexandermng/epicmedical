@@ -52,7 +52,7 @@ public class PatientController extends RoutingController {
 	Label docMsgName;
 	@FXML
 	Button callButton;
-	
+
 	@FXML
 	Label visitBody;
 
@@ -62,7 +62,7 @@ public class PatientController extends RoutingController {
 	@Override
 	protected void init() {
 		Patient self = (Patient) app.currentUser;
-		
+
 		if (patientName != null)
 			patientName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
 
@@ -71,24 +71,22 @@ public class PatientController extends RoutingController {
 			for (Visit v : p.visits) {
 				visitHistory.getItems().add(v);
 			}
-			
-			EventHandler<ActionEvent> event =
-					new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent e)
-	            {
-	                visitBody.setText(visitHistory.getValue().visitBody());
-	            }
-	        };
-	        
-	        visitHistory.setOnAction(event);
+
+			EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent e) {
+					visitBody.setText(visitHistory.getValue().visitBody());
+				}
+			};
+
+			visitHistory.setOnAction(event);
 		}
-		
+
 		if (patDoctor != null)
-			patDoctor.setText(self.doctor.firstName+" "+self.doctor.lastName);
-		
+			patDoctor.setText(self.doctor.firstName + " " + self.doctor.lastName);
+
 		if (patNurse != null)
-			patNurse.setText(self.nurse.firstName+" "+self.nurse.lastName);
-		
+			patNurse.setText(self.nurse.firstName + " " + self.nurse.lastName);
+
 		if (patName != null) {
 			patName.setText(self.firstName);
 			patAddress.setText(self.pharmacy);
@@ -134,10 +132,12 @@ public class PatientController extends RoutingController {
 		app.currentPatient.setInsuranceCompany(insuranceCompany.getText());
 		app.currentPatient.setPharmacy(pharmacy.getText());
 		app.db.addPatient(app.currentPatient.id, app.currentPatient);
-		// TODO: if done by Nurse, then go to NursePortal
 		System.out.printf("Added patient [%s]:\n\tUsername: %s\n\tPassword: %s",
 				app.currentPatient.id, app.currentPatient.username, app.currentPatient.password);
-		goNursePortal(evt);
+		if (app.currentUser == null)
+			goHomeLogin(evt);
+		else
+			goStaffPortal(evt);
 	}
 
 	@FXML

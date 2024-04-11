@@ -35,7 +35,7 @@ public class LoginController extends RoutingController {
 		System.out.println("\tUsername: " + usernameTxt.getText());
 		System.out.println("\tPassword: " + passwordTxt.getText());
 		if (app.checkNurseLogin(usernameTxt.getText(), passwordTxt.getText())) {
-			goNursePortal(evt);
+			goStaffPortal(evt);
 		}
 	}
 
@@ -46,7 +46,7 @@ public class LoginController extends RoutingController {
 		System.out.println("\tUsername: " + usernameTxt.getText());
 		System.out.println("\tPassword: " + passwordTxt.getText());
 		if (app.checkDoctorLogin(usernameTxt.getText(), passwordTxt.getText())) {
-			goDoctorPortal(evt);
+			goStaffPortal(evt);
 		}
 	}
 }

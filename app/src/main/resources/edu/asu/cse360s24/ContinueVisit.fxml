@@ -4,11 +4,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.DoctorController" stylesheets="@styles.css">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.VisitController" stylesheets="@styles.css">
 
 <top>
 <VBox alignment="CENTER">
-	<!-- TODO: wire up -->
 	<Label fx:id="patientName" text="[patient name]" style="-fx-font-size: 16;"/>
 </VBox>
 </top>
@@ -16,7 +15,6 @@
 <center>
 <HBox alignment="CENTER" spacing="20.0">
 <GridPane hgap="10" vgap="10" style="-fx-padding: 40 10 10 10;">
-	<!-- TODO: wire up with fx:id -->
 	<TextArea fx:id="examNotes" promptText="Examination Notes" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-max-width: 300; -fx-max-height: 100;"/>
 	<TextArea fx:id="recommendations" promptText="Recommendations" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-max-width: 300; -fx-max-height: 100;"/>
 	<HBox  GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="10.0">
@@ -34,7 +32,7 @@
 
 <bottom>
 <VBox alignment="CENTER">
-	<Button text="End Visit" onAction="#endVisit" style="-fx-font-size: 12; -fx-min-width: 150; -fx-min-height: 30"/>
+	<Button text="End Visit" onAction="#endContVisit" style="-fx-font-size: 12; -fx-min-width: 150; -fx-min-height: 30"/>
 </VBox>
 </bottom>
 

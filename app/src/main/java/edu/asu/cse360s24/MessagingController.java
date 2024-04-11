@@ -46,6 +46,6 @@ public class MessagingController extends RoutingController {
 	@FXML
 	protected void returnToPortal(ActionEvent evt) {
 		// TODO choose the right return
-		goDoctorPortal(evt);
+		goStaffPortal(evt);
 	}
 }

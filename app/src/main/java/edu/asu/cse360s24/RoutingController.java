@@ -32,18 +32,13 @@ public abstract class RoutingController {
 	}
 
 	@FXML
-	protected void goDoctorPortal(ActionEvent evt) {
-		app.loadScene("DoctorPortal.fxml");
+	protected void goStaffPortal(ActionEvent evt) {
+		app.loadScene("StaffPortal.fxml");
 	}
 
 	@FXML
 	protected void goNurseLogin(ActionEvent evt) {
 		app.loadScene("NurseLogin.fxml");
-	}
-
-	@FXML
-	protected void goNursePortal(ActionEvent evt) {
-		app.loadScene("NursePortal.fxml");
 	}
 
 	@FXML
