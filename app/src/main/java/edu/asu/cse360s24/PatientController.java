@@ -141,7 +141,12 @@ public class PatientController extends RoutingController {
 		// TODO: if done by Nurse, then go to NursePortal
 		System.out.printf("Added patient [%s]:\n\tUsername: %s\n\tPassword: %s",
 				app.currentPatient.id, app.currentPatient.username, app.currentPatient.password);
-		goNursePortal(evt);
+		if (app.currentUser != null) {
+			goNursePortal(evt);
+		} else {
+			app.currentUser = app.currentPatient;
+			goPatientPortal(evt);
+		}
 	}
 
 	@FXML

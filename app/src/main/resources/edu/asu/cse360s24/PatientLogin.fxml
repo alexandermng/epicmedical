@@ -25,8 +25,10 @@
         </VBox.margin>
     </PasswordField>
     
-    <Button text="Login" onAction="#patientLogin" style="-fx-font-size: 16;" />
-    <!-- TODO: where is patient signup? -->
+    <HBox alignment="CENTER" spacing="20.0">
+    	<Button text="Login" onAction="#patientLogin" style="-fx-font-size: 16;" />
+    	<Button text="Sign up" onAction="#goPatientSignup" style="-fx-font-size: 16;" />
+    </HBox>
 </VBox>
 </center>
 <bottom>
