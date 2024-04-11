@@ -50,10 +50,10 @@ public class PatientSignupController extends RoutingController {
 	protected void submitPatientSignup1(ActionEvent evt) {
 		String newID = Patient.generateID();
 		app.currentPatient = new Patient(newID);
-		app.currentPatient.setFirstName(firstName.getText());
-		app.currentPatient.setLastName(lastName.getText());
-		app.currentPatient.setUsername(username.getText());
-		app.currentPatient.setPassword(password.getText());
+		app.currentPatient.firstName = firstName.getText();
+		app.currentPatient.lastName = lastName.getText();
+		app.currentPatient.username = username.getText();
+		app.currentPatient.password = password.getText();
 		app.currentPatient.setPhoneNumber(phoneNum.getText());
 		app.currentPatient.setDateOfBirth(birthdate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
 		goPatientSignup2(evt);

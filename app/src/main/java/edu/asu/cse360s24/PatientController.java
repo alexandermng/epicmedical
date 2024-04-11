@@ -1,7 +1,5 @@
 package edu.asu.cse360s24;
 
-import java.time.format.DateTimeFormatter;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,6 +15,9 @@ public class PatientController extends RoutingController {
 	@FXML
 	Label patNurse;
 	@FXML
+	Button sendMsgButt;
+
+	@FXML
 	TextField patName;
 	@FXML
 	TextField patAddress;
@@ -30,12 +31,20 @@ public class PatientController extends RoutingController {
 
 	@Override
 	protected void init() {
-		if (!(app.currentUser instanceof Patient))
+		if (!(app.currentUser instanceof Patient)) {
 			System.err.println("Something went terribly wrong!");
+			return;
+		}
 		Patient self = (Patient) app.currentUser;
 
-		if (patientName != null)
-			patientName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
+		if (self.doctor != null) { // has a doctor
+			sendMsgButt.setDisable(false);
+			patDoctor.setText(self.doctor.getName());
+		}
+		if (self.nurse != null)
+			patNurse.setText(self.nurse.getName());
+
+		patientName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
 
 		if (visitHistory != null) {
 			Patient p = (Patient) app.currentUser;
@@ -52,17 +61,9 @@ public class PatientController extends RoutingController {
 			visitHistory.setOnAction(event);
 		}
 
-		if (patDoctor != null)
-			patDoctor.setText(self.doctor.firstName + " " + self.doctor.lastName);
-
-		if (patNurse != null)
-			patNurse.setText(self.nurse.firstName + " " + self.nurse.lastName);
-
-		if (patName != null) {
-			patName.setText(self.firstName);
-			patAddress.setText(self.pharmacy);
-			patPhone.setText(self.phoneNumber);
-		}
+		patName.setText(self.firstName);
+		patAddress.setText(self.pharmacy);
+		patPhone.setText(self.phoneNumber);
 	}
 
 	@FXML

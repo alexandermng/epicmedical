@@ -19,7 +19,7 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		this.primary = stage;
 		this.db = new Database();
-		
+
 		// TEMPORARY NURSE LOGIN
 		Nurse n = new Nurse();
 		n.firstName = "Test";
@@ -27,7 +27,7 @@ public class Main extends Application {
 		n.username = "nurse";
 		n.password = "";
 		db.getData().nurses.put(n.username, n);
-		
+
 		// TEMPORARY NURSE LOGIN
 		Doctor d = new Doctor();
 		d.firstName = "Test";
@@ -35,7 +35,6 @@ public class Main extends Application {
 		d.username = "doctor";
 		d.password = "";
 		db.getData().doctors.put(d.username, d);
-		
 
 		stage.setTitle("EPIC MEDICAL");
 		loadScene("Login.fxml");
@@ -93,13 +92,13 @@ public class Main extends Application {
 		}
 		return false;
 	}
-	
+
 	public boolean checkDoctorLogin(String username, String password) {
 		HashMap<String, Doctor> doctorMap = db.getData().doctors;
 		if (doctorMap.containsKey(username)) {
 			Doctor temp = doctorMap.get(username);
 			if (temp.password.equals(password)) {
-				currentUser = temp;
+				currentUser = temp; // TODO set currentPatient
 				return true;
 			}
 		}

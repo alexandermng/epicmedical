@@ -4,6 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+/**
+ * Controller for all Messaging. Assumes that if the current user is a Patient,
+ * that they have an existing Doctor as their provider. If the current user is a
+ * staff member (Doctor/Nurse), then we assume that there is a current patient
+ * they are messaging.
+ * 
+ * @see Messaging.fxml
+ */
 public class MessagingController extends RoutingController {
 	String msgHistory;
 
@@ -20,18 +28,16 @@ public class MessagingController extends RoutingController {
 	protected void init() {
 		msgHistory = "";
 		refreshMsg();
-		// TODO base sender and recipient off of logged in user and current patient
+		if (app.currentUser instanceof Patient) {
+			Patient p = (Patient) app.currentUser;
+			sender.setText(p.getName());
+			recipient.setText(p.doctor.getName());
+		} else { // is staff with current
+			sender.setText(app.currentUser.getName());
+			recipient.setText(app.currentPatient.getName());
+		}
 	}
 
-	/**
-	 * Append a message to file history
-	 */
-	private void appendMsg(String add) {
-		// TODO get sender from logged in user
-		msgHistory += "-----------------\n" + "[doctor name here]" + ":\n" + add + "\n-----------------";
-		messageArea.setText(msgHistory);
-	}
-	
 	private void refreshMsg() {
 		String msgs = "";
 		for (Message m : app.currentPatient.messages) {
@@ -43,13 +49,13 @@ public class MessagingController extends RoutingController {
 	@FXML
 	protected void sendMessage(ActionEvent evt) {
 		System.out.println("Sending message:" + messageBox.getText());
-		//appendMsg(messageBox.getText());
-		
+		// appendMsg(messageBox.getText());
+
 		Message m = new Message(app.currentUser, messageBox.getText());
 		messageBox.setText("");
 		app.currentPatient.messages.add(m);
 		refreshMsg();
-		
+
 		messageBox.clear();
 	}
 
@@ -60,11 +66,9 @@ public class MessagingController extends RoutingController {
 
 	@FXML
 	protected void returnToPortal(ActionEvent evt) {
-		// TODO choose the right return
-		if (app.currentUser instanceof Patient) {
+		if (app.currentUser instanceof Patient)
 			goPatientPortal(evt);
-		} else {
+		else
 			goStaffPortal(evt);
-		}
 	}
 }
