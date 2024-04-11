@@ -24,9 +24,9 @@ public class VisitController extends RoutingController {
 	@FXML
 	TextField bloodPressure;
 	@FXML
-	TextField allergies;
+	TextArea allergies;
 	@FXML
-	TextField concerns;
+	TextArea concerns;
 	@FXML
 	TextArea immunizations;
 
@@ -61,7 +61,9 @@ public class VisitController extends RoutingController {
 
 		issuesLabel.setText("Previous Health Issues:\n" + issues);
 		pHistoryLabel.setText("Prescription History:\n" + pHistory);
-		iHistoryLabel.setText("Immunization History:\n" + app.currentPatient.visits.getLast().immuneHistory);
+		if (app.currentPatient.visits.size() > 0) {
+			iHistoryLabel.setText("Immunization History:\n" + app.currentPatient.visits.getLast().immuneHistory);
+		}
 	}
 
 	@FXML
