@@ -25,10 +25,6 @@ public class StaffController extends RoutingController {
 	GridPane patientList;
 	@FXML
 	Button newPatientButton;
-	@FXML
-	Label patientMsgName;
-	@FXML
-	Button callButton;
 
 	@Override
 	protected void init() {

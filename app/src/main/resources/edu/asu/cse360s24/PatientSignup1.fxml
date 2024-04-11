@@ -4,29 +4,36 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.PatientController" stylesheets="@styles.css">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="edu.asu.cse360s24.PatientSignupController" stylesheets="@styles.css">
 
-<top>
-<VBox alignment="CENTER">
-	<Label text="Patient Signup" style="-fx-font-size: 24;"/>
-</VBox>
-</top>
+	<top>
+		<VBox alignment="CENTER">
+			<Label text="Patient Signup" style="-fx-font-size: 24;" />
+		</VBox>
+	</top>
 
-<center>
-<GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
-	<TextField fx:id="firstName" promptText="First Name"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField fx:id="lastName" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField fx:id="username" promptText="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<PasswordField fx:id="password" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<TextField fx:id="phoneNum" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;"/>
-	<DatePicker fx:id="birthdate" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-</GridPane>
-</center>
+	<center>
+		<GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+			<TextField fx:id="firstName" promptText="First Name" GridPane.columnIndex="0"
+				GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;" />
+			<TextField fx:id="lastName" promptText="Last Name" GridPane.columnIndex="1"
+				GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 150;" />
+			<TextField fx:id="username" promptText="Username" GridPane.columnIndex="0"
+				GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;" />
+			<PasswordField fx:id="password" promptText="Password" GridPane.columnIndex="1"
+				GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 150;" />
+			<TextField fx:id="phoneNum" promptText="Phone Number" GridPane.columnIndex="1"
+				GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 150;" />
+			<DatePicker fx:id="birthdate" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+		</GridPane>
+	</center>
 
-<bottom>
-<VBox alignment="CENTER">
-	<Button text="Continue" onAction="#patientSignup2" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
-</VBox>
-</bottom>
+	<bottom>
+		<VBox alignment="CENTER">
+			<Button text="Continue" onAction="#submitPatientSignup1"
+				style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50" />
+		</VBox>
+	</bottom>
 
 </BorderPane>

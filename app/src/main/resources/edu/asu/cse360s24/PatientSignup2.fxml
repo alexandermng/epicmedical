@@ -4,26 +4,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.asu.cse360s24.PatientController" stylesheets="@styles.css">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="edu.asu.cse360s24.PatientSignupController"
+	stylesheets="@styles.css">
 
-<top>
-<VBox alignment="CENTER">
-	<Label text="Patient Signup" style="-fx-font-size: 24;"/>
-</VBox>
-</top>
+	<top>
+		<VBox alignment="CENTER">
+			<Label text="Patient Signup" style="-fx-font-size: 24;" />
+		</VBox>
+	</top>
 
-<center>
-<GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
-	<TextField fx:id="insuranceMemberID" promptText="Insurance Member ID"  GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 300;"/>
-	<TextField fx:id="insuranceCompany" promptText="Insurance Company" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 300;"/>
-	<TextField fx:id="pharmacy" promptText="Pharmacy" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 300;"/>
-</GridPane>
-</center>
+	<center>
+		<GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 10 10 10 10;">
+			<TextField fx:id="insuranceMemberID" promptText="Insurance Member ID" GridPane.columnIndex="0"
+				GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 300;" />
+			<TextField fx:id="insuranceCompany" promptText="Insurance Company" GridPane.columnIndex="0"
+				GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 300;" />
+			<TextField fx:id="pharmacy" promptText="Pharmacy" GridPane.columnIndex="0"
+				GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 300;" />
+		</GridPane>
+	</center>
 
-<bottom>
-<VBox alignment="CENTER">
-	<Button text="Sign Up" onAction="#patientSignup" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50"/>
-</VBox>
-</bottom>
+	<bottom>
+		<VBox alignment="CENTER">
+			<Button text="Sign Up" onAction="#submitPatientSignup2"
+				style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 50" />
+		</VBox>
+	</bottom>
 
 </BorderPane>
