@@ -8,21 +8,15 @@ public class Message implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String to; // hmm.. these should be objects. TODO rewrite
-	private String from;
+	private Person from;
 	private String message;
 
-	Message(String to, String from, String message) {
-		this.to = to;
+	Message(Person from, String message) {
 		this.from = from;
 		this.message = message;
 	}
 
-	public String getTo() {
-		return to;
-	}
-
-	public String getFrom() {
+	public Person getFrom() {
 		return from;
 	}
 

@@ -35,6 +35,11 @@ public class MessagingController extends RoutingController {
 	protected void sendMessage(ActionEvent evt) {
 		System.out.println("Sending message:" + messageBox.getText());
 		appendMsg(messageBox.getText());
+		
+		Message m = new Message(app.currentUser, messageBox.getText());
+		messageBox.setText("");
+		app.currentPatient.messages.add(m);
+		
 		messageBox.clear();
 	}
 
@@ -46,6 +51,10 @@ public class MessagingController extends RoutingController {
 	@FXML
 	protected void returnToPortal(ActionEvent evt) {
 		// TODO choose the right return
-		goStaffPortal(evt);
+		if (app.currentUser instanceof Patient) {
+			goPatientPortal(evt);
+		} else {
+			goStaffPortal(evt);
+		}
 	}
 }

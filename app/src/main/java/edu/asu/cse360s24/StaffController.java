@@ -67,7 +67,10 @@ public class StaffController extends RoutingController {
 			}
 
 			Button messageButton = new Button("Send Message");
-			messageButton.setOnAction(e -> goMessaging(e));
+			messageButton.setOnAction(e -> {
+				app.currentPatient = temp;
+				goMessaging(e);
+			});
 
 			HBox h = new HBox();
 			h.setSpacing(10.0);
