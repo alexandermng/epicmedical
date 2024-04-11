@@ -17,8 +17,6 @@ public class Visit implements Serializable{
 	String allergies;
 	String concerns;
 	
-	String previousIssues;
-	String prescriptions;
 	String immuneHistory;
 	String recommendations;
 	String examNotes;

@@ -9,7 +9,7 @@
 <top>
 <VBox alignment="CENTER">
 	<!-- TODO: wire up -->
-	<Label text="[patient name]" style="-fx-font-size: 16;"/>
+	<Label fx:id="patientName" text="[patient name]" style="-fx-font-size: 16;"/>
 </VBox>
 </top>
 
@@ -21,14 +21,14 @@
 	<TextField fx:id="height" promptText="Height" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 90;"/>
 	<TextField fx:id="bodyTemp" promptText="Body Tempterature" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 90;"/>
 	<TextField fx:id="bloodPressure" promptText="Blood Pressure" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 90;"/>
-	<TextField fx:id="allergies" promptText="Known Allergies" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 90; -fx-min-height: 100;"/>
-	<TextField fx:id="concerns" promptText="Patient Concerns" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-min-width: 90; -fx-min-height: 100;"/>
+	<TextArea fx:id="allergies" promptText="Known Allergies" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-max-width: 150; -fx-max-height: 100;"/>
+	<TextArea fx:id="concerns" promptText="Patient Concerns" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 12; -fx-max-width: 150; -fx-max-height: 100;"/>
+	<TextArea fx:id="immunizations" promptText="Immunization History" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-size: 12; -fx-max-width: 150; -fx-max-height: 100;"/>
 </GridPane>
 <VBox spacing="5.0">
-	<Label text="Previous Health Issues:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
-	<Label text="Prescription History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
-	<Label text="Immunization History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
-	<Label text="Recommendations:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
+	<Label fx:id="issuesLabel" text="Previous Health Issues:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
+	<Label fx:id="pHistoryLabel" text="Prescription History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
+	<Label fx:id="iHistoryLabel" text="Immunization History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
 </VBox>
 </HBox>
 </center>

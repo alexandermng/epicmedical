@@ -9,7 +9,7 @@
 <top>
 <VBox alignment="CENTER">
 	<!-- TODO: wire up -->
-	<Label text="[patient name]" style="-fx-font-size: 16;"/>
+	<Label fx:id="patientName" text="[patient name]" style="-fx-font-size: 16;"/>
 </VBox>
 </top>
 
@@ -17,18 +17,17 @@
 <HBox alignment="CENTER" spacing="20.0">
 <GridPane hgap="10" vgap="10" style="-fx-padding: 40 10 10 10;">
 	<!-- TODO: wire up with fx:id -->
-	<TextField fx:id="examNotes" promptText="Examination Notes" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-min-width: 300; -fx-min-height: 100;"/>
-	<TextField fx:id="recommendations" promptText="Recommendations" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-min-width: 300; -fx-min-height: 100;"/>
+	<TextArea fx:id="examNotes" promptText="Examination Notes" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 12; -fx-max-width: 300; -fx-max-height: 100;"/>
+	<TextArea fx:id="recommendations" promptText="Recommendations" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 12; -fx-max-width: 300; -fx-max-height: 100;"/>
 	<HBox  GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="10.0">
 		<TextField fx:id="prescriptions" promptText="Prescription" style="-fx-font-size: 12; -fx-min-width: 200; -fx-min-height: 30;"/>
 		<Button text="Send" onAction="#sendPrescription" style="-fx-font-size: 12; -fx-min-width: 90; -fx-min-height: 30;"/>
 	</HBox>
 </GridPane>
 <VBox spacing="5.0">
-	<Label text="Previous Health Issues:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
-	<Label text="Prescription History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
-	<Label text="Immunization History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
-	<Label text="Recommendations:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
+	<Label fx:id="issuesLabel" text="Previous Health Issues:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
+	<Label fx:id="pHistoryLabel" text="Prescription History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
+	<Label fx:id="iHistoryLabel" text="Immunization History:" style="-fx-font-size: 12; -fx-min-width: 100; -fx-min-height: 75;"/>
 </VBox>
 </HBox>
 </center>

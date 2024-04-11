@@ -41,18 +41,30 @@ public class DoctorController extends RoutingController {
 	TextField concerns;
 
 	@FXML
-	TextField examNotes;
+	TextArea examNotes;
 	@FXML
-	TextField recommendations;
+	TextArea recommendations;
 	@FXML
 	TextField prescriptions;
+	
+	@FXML
+	Label issuesLabel;
+	@FXML
+	Label pHistoryLabel;
+	@FXML
+	Label iHistoryLabel;
+	
+	@FXML
+	Label patientName;
 
 	@Override
 	protected void init() {
 		msgHistory = "";
-		if (docName != null) {
+		if (docName != null)
 			docName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
-		}
+		
+		if (patientName != null) 
+			patientName.setText(app.currentPatient.firstName + " " + app.currentPatient.lastName);
 
 		// add patients to the list
 		if (patientList != null) {
@@ -94,6 +106,19 @@ public class DoctorController extends RoutingController {
 				h.getChildren().addAll(msgNoti, visitButton, messageButton);
 				patientList.add(h, 3, i);
 			}
+		}
+		
+		if (issuesLabel != null) {
+			String issues = "";
+			String pHistory = "";
+			for (Visit i : app.currentPatient.visits) {
+				issues += i.examNotes+"\n";
+				pHistory += i.prescription+"\n";
+			}
+			
+			issuesLabel.setText("Previous Health Issues:\n"+issues);
+			pHistoryLabel.setText("Prescription History:\n"+pHistory);
+			iHistoryLabel.setText("Immunization History:\n"+app.currentPatient.visits.getLast().immuneHistory);
 		}
 	}
 

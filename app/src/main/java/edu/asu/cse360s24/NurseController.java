@@ -36,13 +36,28 @@ public class NurseController extends RoutingController {
 	@FXML
 	TextField bloodPressure;
 	@FXML
-	TextField allergies;
+	TextArea allergies;
 	@FXML
-	TextField concerns;
+	TextArea concerns;
+	@FXML
+	TextArea immunizations;
+	
+	@FXML
+	Label issuesLabel;
+	@FXML
+	Label pHistoryLabel;
+	@FXML
+	Label iHistoryLabel;
+	
+	@FXML
+	Label patientName;
 
 	@Override
 	protected void init() {
 		msgHistory = "";
+		if (patientName != null) 
+			patientName.setText(app.currentPatient.firstName + " " + app.currentPatient.lastName);
+		
 		if (nurseName != null)
 			nurseName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
 		
@@ -87,6 +102,19 @@ public class NurseController extends RoutingController {
 				patientList.add(h, 3, i);
 			}
 		}
+		
+		if (issuesLabel != null) {
+			String issues = "";
+			String pHistory = "";
+			for (Visit i : app.currentPatient.visits) {
+				issues += i.examNotes+"\n";
+				pHistory += i.prescription+"\n";
+			}
+			
+			issuesLabel.setText("Previous Health Issues:\n"+issues);
+			pHistoryLabel.setText("Prescription History:\n"+pHistory);
+			iHistoryLabel.setText("Immunization History:\n"+app.currentPatient.visits.getLast().immuneHistory);
+		}
 	}
 
 	/**
@@ -129,6 +157,7 @@ public class NurseController extends RoutingController {
 		v.bloodPressure = bloodPressure.getText();
 		v.allergies = allergies.getText();
 		v.concerns = concerns.getText();
+		v.immuneHistory = immunizations.getText();
 		v.date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
 		v.nurse = (Nurse) app.currentUser;
 		
