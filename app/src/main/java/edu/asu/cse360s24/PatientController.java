@@ -61,38 +61,42 @@ public class PatientController extends RoutingController {
 
 	@Override
 	protected void init() {
-		Patient self = (Patient) app.currentUser;
-		
-		if (patientName != null)
-			patientName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
-
-		if (visitHistory != null) {
-			Patient p = (Patient) app.currentUser;
-			for (Visit v : p.visits) {
-				visitHistory.getItems().add(v);
+		try {
+			Patient self = (Patient) app.currentUser;
+			
+			if (patientName != null)
+				patientName.setText(app.currentUser.firstName + " " + app.currentUser.lastName);
+	
+			if (visitHistory != null) {
+				Patient p = (Patient) app.currentUser;
+				for (Visit v : p.visits) {
+					visitHistory.getItems().add(v);
+				}
+				
+				EventHandler<ActionEvent> event =
+						new EventHandler<ActionEvent>() {
+					public void handle(ActionEvent e)
+		            {
+		                visitBody.setText(visitHistory.getValue().visitBody());
+		            }
+		        };
+		        
+		        visitHistory.setOnAction(event);
 			}
 			
-			EventHandler<ActionEvent> event =
-					new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent e)
-	            {
-	                visitBody.setText(visitHistory.getValue().visitBody());
-	            }
-	        };
-	        
-	        visitHistory.setOnAction(event);
-		}
-		
-		if (patDoctor != null)
-			patDoctor.setText(self.doctor.firstName+" "+self.doctor.lastName);
-		
-		if (patNurse != null)
-			patNurse.setText(self.nurse.firstName+" "+self.nurse.lastName);
-		
-		if (patName != null) {
-			patName.setText(self.firstName);
-			patAddress.setText(self.pharmacy);
-			patPhone.setText(self.phoneNumber);
+			if (patDoctor != null)
+				patDoctor.setText(self.doctor.firstName+" "+self.doctor.lastName);
+			
+			if (patNurse != null)
+				patNurse.setText(self.nurse.firstName+" "+self.nurse.lastName);
+			
+			if (patName != null) {
+				patName.setText(self.firstName);
+				patAddress.setText(self.pharmacy);
+				patPhone.setText(self.phoneNumber);
+			}
+		} catch (ClassCastException c) {
+			
 		}
 	}
 
