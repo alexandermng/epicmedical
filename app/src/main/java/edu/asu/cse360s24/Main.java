@@ -71,6 +71,7 @@ public class Main extends Application {
 			Patient temp = entry.getValue();
 			if (temp.username.equals(username) && temp.password.equals(password)) {
 				System.out.println("Login Successful");
+				currentPatient = temp;
 				currentUser = temp;
 				return true;
 			}

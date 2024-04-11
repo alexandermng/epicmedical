@@ -19,6 +19,7 @@ public class MessagingController extends RoutingController {
 	@Override
 	protected void init() {
 		msgHistory = "";
+		refreshMsg();
 		// TODO base sender and recipient off of logged in user and current patient
 	}
 
@@ -30,15 +31,24 @@ public class MessagingController extends RoutingController {
 		msgHistory += "-----------------\n" + "[doctor name here]" + ":\n" + add + "\n-----------------";
 		messageArea.setText(msgHistory);
 	}
+	
+	private void refreshMsg() {
+		String msgs = "";
+		for (Message m : app.currentPatient.messages) {
+			msgs += m.getFrom().firstName + " " + m.getFrom().lastName + "\n" + m.getMessage() + "\n";
+		}
+		messageArea.setText(msgs);
+	}
 
 	@FXML
 	protected void sendMessage(ActionEvent evt) {
 		System.out.println("Sending message:" + messageBox.getText());
-		appendMsg(messageBox.getText());
+		//appendMsg(messageBox.getText());
 		
 		Message m = new Message(app.currentUser, messageBox.getText());
 		messageBox.setText("");
 		app.currentPatient.messages.add(m);
+		refreshMsg();
 		
 		messageBox.clear();
 	}
