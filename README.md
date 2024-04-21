@@ -2,6 +2,9 @@
 
 For the CSE 360 Group Project. Implemented in Java using JavaFX. Using Gradle as a build tool.
 
+We use JavaFX's FXML utilities to define our UI declaratively and follow the Model-View-Controller design pattern.
+In this way, we can separate the application logic and functionality from the visual UI.
+
 ## Project Structure
 
 ```
